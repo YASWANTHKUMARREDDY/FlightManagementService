@@ -1,0 +1,29 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+         defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+server:
+  port: 1111
+  servlet:
+    context-path: /user
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Chinna@0248
+    url: jdbc:mysql://localhost:3306/userdb?createDatabaseIfNotExist=true&useSSL=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
